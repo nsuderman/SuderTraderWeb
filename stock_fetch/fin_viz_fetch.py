@@ -73,7 +73,7 @@ def stock_screener(price='sh_price_1to20', volume_over='sh_curvol_o5000'):
                     f'Volume Param {volume_over}')
 
     except Exception as e:
-        print(f'No Results Returned from Price Param {price.name} & Volume Param {volume_over.name}')
+        print(f'No Results Returned from Price Param {price} & Volume Param {volume_over}')
         print(f'Pulling Data from Last Successful Query')
 
     df = pd.read_csv(location + '/stock_fetch/stocks.csv')
