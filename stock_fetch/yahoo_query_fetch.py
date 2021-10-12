@@ -11,6 +11,7 @@ def get_ticker_data(ticker,start_dt,end_dt,interval,min_lag_period):
             t_df.index = pd.to_datetime(t_df._get_label_or_level_values('date'))
         else:
             #Comment out for BackTrader
+            t_df.loc[t_df['volume'] == 0,'volume'] = 7
             t_df['ticker'] = t_df._get_label_or_level_values('symbol')
             t_df.index = pd.to_datetime(t_df._get_label_or_level_values('date'))
     else:
